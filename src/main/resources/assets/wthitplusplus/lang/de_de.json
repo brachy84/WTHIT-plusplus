@@ -1,0 +1,14 @@
+{
+  "wthitplusplus.blockinfo.requires": "Erfordert",
+  "wthitplusplus.blockinfo.pickaxe": "Spitzhacke",
+  "wthitplusplus.blockinfo.axe": "Axt",
+  "wthitplusplus.blockinfo.shovel": "Schaufel",
+  "wthitplusplus.blockinfo.hoe": "Hake",
+  "wthitplusplus.blockinfo.sword": "Schwert",
+  "wthitplusplus.blockinfo.shear": "Schere",
+  "wthitplusplus.blockinfo.wrench": "Schraubenschlüssel",
+  "wthitplusplus.blockinfo.none": "Keins",
+  "wthitplusplus.blockinfo.mineable": "Abbaubar",
+  "wthitplusplus.blockinfo.not_mineable": "Nicht abbaubar",
+  "wthitplusplus.blockinfo.requires": "Required"
+}

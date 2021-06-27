@@ -1,0 +1,13 @@
+{
+  "wthitplusplus.blockinfo.requires": "Required",
+  "wthitplusplus.blockinfo.pickaxe": "Pickaxe",
+  "wthitplusplus.blockinfo.axe": "Axe",
+  "wthitplusplus.blockinfo.shovel": "Shovel",
+  "wthitplusplus.blockinfo.hoe": "Hoe",
+  "wthitplusplus.blockinfo.sword": "Sword",
+  "wthitplusplus.blockinfo.shear": "Shear",
+  "wthitplusplus.blockinfo.wrench": "Wrench",
+  "wthitplusplus.blockinfo.none": "None",
+  "wthitplusplus.blockinfo.mineable": "Mineable",
+  "wthitplusplus.blockinfo.not_mineable": "Not mineable"
+}
