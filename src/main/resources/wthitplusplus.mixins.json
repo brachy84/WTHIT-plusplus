@@ -9,6 +9,7 @@
     "ClientPlayerInteractionManagerMixin"
   ],
   "client": [
+    "WailaConfigMixin"
   ],
   "injectors": {
     "defaultRequire": 1

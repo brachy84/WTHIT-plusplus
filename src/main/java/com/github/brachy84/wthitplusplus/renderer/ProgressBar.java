@@ -4,6 +4,7 @@ import com.github.brachy84.wthitplusplus.WthitPlusPlus;
 import mcp.mobius.waila.api.ICommonAccessor;
 import mcp.mobius.waila.api.IDrawableText;
 import mcp.mobius.waila.api.ITooltipRenderer;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.nbt.NbtCompound;
@@ -33,7 +34,7 @@ public class ProgressBar implements ITooltipRenderer {
 
     @Override
     public Dimension getSize(NbtCompound tag, ICommonAccessor iCommonAccessor) {
-        return new Dimension(tag.getInt("width") + 2, tag.getInt("height"));
+        return new Dimension(tag.getInt("width"), tag.getInt("height") + 2);
     }
 
     @Override
@@ -54,6 +55,12 @@ public class ProgressBar implements ITooltipRenderer {
         // filling
         //DrawableHelper.fill(matrices, x + 1, y + 1, x + w - 1, y + h - 1, filling.asInt());
 
-        DrawableHelper.fill(matrices, x + 1, y + 1, (int) (x + 1 + (progress * w - 2)), y + h - 1, color);
+        DrawableHelper.fill(matrices, x + 1, y + 1, (int) (x + 1 + (progress * (w - 2))), y + h - 1, color);
+        int percent = (int) (progress * 100 + 0.5);
+        matrices.push();
+        matrices.scale(0.7f, 0.7f, 0);
+        matrices.translate(160.5, 21.5, 0);
+        MinecraftClient.getInstance().textRenderer.draw(matrices, percent + "%", x + 4, y + 2, Color.of(1f, 1f, 1f).asInt());
+        matrices.pop();
     }
 }
