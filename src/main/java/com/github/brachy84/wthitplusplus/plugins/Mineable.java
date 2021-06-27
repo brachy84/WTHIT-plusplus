@@ -95,7 +95,7 @@ public class Mineable extends Feature implements IBlockComponentProvider {
                 tooltip.add(IDrawableText.of(IconText.ID, tag));
             }
 
-            if (correctTool) {
+            if (correctTool && !unbreakable) {
                 NbtCompound tag = IconText.createTag(16, 16, WthitPlusPlus.id("textures/gui/icons.png"), 0f, 0.5f, 0.5f, 1f, I18n.translate(required) + ": " + I18n.translate(toolKey), 0.65f);
                 tooltip.add(IDrawableText.of(IconText.ID, tag));
             } else {
