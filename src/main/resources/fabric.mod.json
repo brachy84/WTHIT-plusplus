@@ -34,5 +34,11 @@
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "custom": {
+    "waila:plugins" : {
+      "id": "wthitplusplus:plugin",
+      "initializer": "com.github.brachy84.wthitplusplus.WthitPlugin"
+    }
   }
 }
