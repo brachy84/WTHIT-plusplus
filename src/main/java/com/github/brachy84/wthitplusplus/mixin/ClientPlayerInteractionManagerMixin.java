@@ -8,7 +8,8 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(ClientPlayerInteractionManager.class)
 public class ClientPlayerInteractionManagerMixin implements ClientInteractionAccess {
 
-    @Shadow private float currentBreakingProgress;
+    @Shadow
+    private float currentBreakingProgress;
 
     @Override
     public float getBreakProgress() {

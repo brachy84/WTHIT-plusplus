@@ -55,7 +55,7 @@ public class IconText implements ITooltipRenderer {
         int width = w + MinecraftClient.getInstance().textRenderer.getWidth(tag.getString("text"));
 
         Draw.texture(path, matrixStack, x, y, x1, y1, 100, u0, v0, u1, v1);
-        int textY = (int) ( y + (h - (h / 2 + 3.5)));
+        int textY = (int) (y + (h - (h / 2 + 3.5)));
         MinecraftClient.getInstance().textRenderer.drawWithShadow(matrixStack, tag.getString("text"), x + w + 2, textY, Waila.config.get().getOverlay().getColor().getFontColor());
     }
 }

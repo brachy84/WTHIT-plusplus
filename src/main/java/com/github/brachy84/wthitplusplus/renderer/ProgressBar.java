@@ -2,7 +2,6 @@ package com.github.brachy84.wthitplusplus.renderer;
 
 import com.github.brachy84.wthitplusplus.WthitPlusPlus;
 import mcp.mobius.waila.api.ICommonAccessor;
-import mcp.mobius.waila.api.IDrawableText;
 import mcp.mobius.waila.api.ITooltipRenderer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;

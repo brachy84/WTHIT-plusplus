@@ -14,7 +14,7 @@ public class Color {
     }
 
     public static Color of(int red, int green, int blue, int alpha) {
-        return new Color((byte)red, (byte)green, (byte)blue, (byte)alpha);
+        return new Color((byte) red, (byte) green, (byte) blue, (byte) alpha);
     }
 
     public static Color of(int red, int green, int blue) {

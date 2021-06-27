@@ -1,14 +1,12 @@
 package com.github.brachy84.wthitplusplus.plugins;
 
-import com.github.brachy84.wthitplusplus.*;
+import com.github.brachy84.wthitplusplus.Feature;
+import com.github.brachy84.wthitplusplus.WthitPlusPlus;
 import com.github.brachy84.wthitplusplus.accessors.AbstractBlockAccess;
 import com.github.brachy84.wthitplusplus.accessors.ClientInteractionAccess;
 import com.github.brachy84.wthitplusplus.renderer.Color;
-import com.github.brachy84.wthitplusplus.renderer.Icon;
 import com.github.brachy84.wthitplusplus.renderer.IconText;
 import com.github.brachy84.wthitplusplus.renderer.ProgressBar;
-import com.google.common.collect.BiMap;
-import com.google.common.collect.HashBiMap;
 import com.google.common.collect.Lists;
 import mcp.mobius.waila.api.*;
 import net.fabricmc.fabric.api.tag.TagRegistry;
@@ -22,21 +20,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.Tag;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 
-import java.util.AbstractMap;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Mineable extends Feature implements IBlockComponentProvider {
 
     public static Identifier TOOL_INFO = WthitPlusPlus.id("block_tool_info");
-    public static Identifier BREAK_PROGRESS = WthitPlusPlus.id("block_break_progress");;
+    public static Identifier BREAK_PROGRESS = WthitPlusPlus.id("block_break_progress");
+    ;
 
     public Mineable() {
     }
@@ -70,7 +65,7 @@ public class Mineable extends Feature implements IBlockComponentProvider {
 
     @Override
     public void appendBody(List<Text> tooltip, IBlockAccessor accessor, IPluginConfig config) {
-        if(config.get(TOOL_INFO)) {
+        if (config.get(TOOL_INFO)) {
             ItemStack item = accessor.getPlayer().getStackInHand(Hand.MAIN_HAND);
 
             boolean requiresTool = ((AbstractBlockAccess) accessor.getBlock()).getSettings().doesRequiresTool();
@@ -82,12 +77,12 @@ public class Mineable extends Feature implements IBlockComponentProvider {
             Tag<Item> requiredTool = getRequiredTool(accessor.getBlock());
             Tag<Item> toolTag = getToolTag(item.getItem(), accessor.getBlock());
 
-            if(requiredTool != null && toolTag != null) {
+            if (requiredTool != null && toolTag != null) {
                 correctTool = requiredTool == toolTag;
             }
-            if(requiredTool != null) {
+            if (requiredTool != null) {
                 toolKey += TOOL_TAGS.get(requiredTool);
-                if(toolTag == null) correctTool = false;
+                if (toolTag == null) correctTool = false;
             } else {
                 toolKey += "none";
             }
@@ -109,9 +104,9 @@ public class Mineable extends Feature implements IBlockComponentProvider {
             }
         }
 
-        if(config.get(BREAK_PROGRESS)) {
-            float progress = ((ClientInteractionAccess)MinecraftClient.getInstance().interactionManager).getBreakProgress();
-            if(progress > 0) {
+        if (config.get(BREAK_PROGRESS)) {
+            float progress = ((ClientInteractionAccess) MinecraftClient.getInstance().interactionManager).getBreakProgress();
+            if (progress > 0) {
                 tooltip.add(ProgressBar.createText(progress, 70, 9, Color.of(100, 200, 100, 150).asInt()));
             }
         }

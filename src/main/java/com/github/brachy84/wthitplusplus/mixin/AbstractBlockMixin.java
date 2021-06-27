@@ -9,7 +9,9 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(AbstractBlock.class)
 public class AbstractBlockMixin implements AbstractBlockAccess {
 
-    @Shadow @Final protected AbstractBlock.Settings settings;
+    @Shadow
+    @Final
+    protected AbstractBlock.Settings settings;
 
     @Override
     public SettingsAcces getSettings() {
@@ -17,7 +19,7 @@ public class AbstractBlockMixin implements AbstractBlockAccess {
     }
 
     @Mixin(AbstractBlock.Settings.class)
-    public static class SettingsMixin implements SettingsAcces{
+    public static class SettingsMixin implements SettingsAcces {
 
         @Shadow
         boolean toolRequired;
